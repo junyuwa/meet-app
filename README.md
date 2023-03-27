@@ -1,7 +1,10 @@
 # meet-app
 
 Objectives:
-The objectives of this project are to build a serverless, progressive web application (PWA), with React and using a test-driven development technique. Google calendar API is used to fetch event data.
+The objectives of this project are to build a serverless, progressive web application (PWA), with React and using a test-driven development technique. AWS Lambda is used for serverless dev and directly retrieve data from Google Calendar API.
+
+![Screen Shot 2023-03-26 at 18 23 14](https://user-images.githubusercontent.com/106661375/227819333-e9a13d35-d303-4574-8090-7af881b6c68e.png)
+
 
 Key features:
 1. filter events by city
