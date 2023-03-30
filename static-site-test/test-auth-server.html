@@ -51,7 +51,7 @@
         const resultElement = document.getElementById("result");
         const resultLink = document.getElementById("authURL");
         // Replace this with your own endpoint
-        const getAuthURL = "";
+        const getAuthURL = "https://hm7jqznvy8.execute-api.us-west-1.amazonaws.com/dev/api/get-auth-url";
 
         getCodeElement.onclick = function () {
             fetch(getAuthURL)
@@ -72,7 +72,7 @@
         const getAccessToken = document.getElementById("getToken");
         const accessTokenElement = document.getElementById("accessToken");
         const getToken =
-            "";
+            "https://hm7jqznvy8.execute-api.us-west-1.amazonaws.com/dev/api/token";
 
         getAccessToken.onclick = function () {
             let code = codeValue.value;
@@ -90,6 +90,25 @@
                     accessTokenElement.innerText = JSON.stringify(json);
                 });
         };
+
+        // -- STEP 3
+        const getEvents = document.getElementById("getEvents");
+        const events = document.getElementById("events");
+        const getCalendarEvents = "https://hm7jqznvy8.execute-api.us-west-1.amazonaws.com/dev/api/get-events";
+
+        getEvents.onclick = function () {
+            const { access_token } = JSON.parse(accessTokenElement.innerText);
+            console.log(access_token);
+            const eventRequest = getCalendarEvents + "/" + access_token;
+            fetch(eventRequest)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (json) {
+                    events.innerText = JSON.stringify(json, null, 2);
+                });
+        };
+      // -- END OF STEP 3
     </script>
 
 </body>
