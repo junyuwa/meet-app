@@ -24,8 +24,6 @@ describe("<Event /> component", () => {
     test("render correct details of events when button clicked", () => {
         const button = EventWrapper.find(".detailsButton");
         button.simulate("click");
-        console.log(EventWrapper.debug());
-        console.log(EventWrapper.state.hide);
         const details = EventWrapper.find(".eventDetail p");
         expect(details.text()).toBe(`Description: ${event.description}`);
     });
