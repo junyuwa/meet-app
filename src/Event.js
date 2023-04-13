@@ -15,7 +15,7 @@ class Event extends Component {
         const { event } = this.props;
         const { hide } = this.state;
         return (
-            <div className="eventDisplay">
+            <div className="event">
                 <h2 className="eventSummary">{event.summary}</h2>
                 <div className="eventTime">
                     {new Date(event.start.dateTime).toISOString()}
